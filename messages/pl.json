@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "stack": "Stack",
+    "sites": "Strony",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "hint": "// PORTFOLIO_v1.0 — SYSTEM ONLINE",
+    "cta_projects": "[ PROJEKTY ]",
+    "cta_contact": "[ KONTAKT ]"
+  },
+  "about": {
+    "label": "// O MNIE —",
+    "title": "KIM JESTEM?",
+    "stats_label": "// STATYSTYKI —",
+    "p1": "Mam na imię Kacper, mam 25 lat i konsekwentnie rozwijam się jako AI oraz fullstack developer. Skupiam się na tworzeniu praktycznych projektów, które publikuję na GitHubie i które pozwalają mi zdobywać realne doświadczenie w pracy z aplikacjami, danymi oraz systemami opartymi o sztuczną inteligencję.",
+    "p2": "Interesuje mnie budowa nowoczesnych rozwiązań wykorzystujących modele językowe, RAG oraz integracje z różnymi API. Równolegle rozwijam wiedzę poprzez kursy online, zdobywam doświadczenie frontendowe tworząc strony internetowe i stawiam na ciągły rozwój przez działanie. W przyszłości chcę specjalizować się w AI i rozwijać swoją karierę jako AI Engineer.",
+    "github": "[ GITHUB ]",
+    "linkedin": "[ LINKEDIN ]",
+    "email": "[ EMAIL ]"
+  },
+  "projects": {
+    "label": "// PROJEKTY_GITHUB —",
+    "title": "MOJE PROJEKTY",
+    "view": "[ ZOBACZ → ]",
+    "no_desc": "// brak opisu"
+  },
+  "stack": {
+    "label": "// TECH_STACK —",
+    "title": "CZEGO UŻYWAM",
+    "learning_note": "(nauka)"
+  },
+  "sites": {
+    "label": "// STRONY_FRONTENDOWE —",
+    "title": "STRONY KTÓRE ZROBIŁEM",
+    "live": "[ LIVE → ]",
+    "in_progress_desc": "Projekt w trakcie realizacji.",
+    "wabi_desc": "Strona restauracyjna dla lokalnego RestoBaru w Kętrzynie łączącego kuchnię azjatycką z włoską. Zawiera pełne menu, integrację z Google Maps, formularz kontaktowy oraz osobną sekcję dla drugiej lokalizacji — wszystko w jednej responsywnej stronie.",
+    "barber_desc": "Strona dla lokalnego barbershopu z systemem rezerwacji online dla klientów i panelem zarządzania dla właściciela. Projekt w trakcie realizacji."
+  },
+  "certificates": {
+    "label": "// CERTYFIKATY —",
+    "title": "MOJE KURSY I CERTYFIKATY",
+    "issued": "Wydano",
+    "category_ai": "AI",
+    "category_data": "Data",
+    "category_python": "Python"
+  },
+  "contact": {
+    "label": "// KONTAKT —",
+    "title": "NAPISZ DO MNIE",
+    "placeholder": "Szukam pracy lub chętnie zrealizuję projekt. Skontaktuj się ze mną!",
+    "name": "IMIĘ",
+    "email": "EMAIL",
+    "message": "WIADOMOŚĆ",
+    "name_placeholder": "Twoje imię",
+    "email_placeholder": "twoj@email.com",
+    "message_placeholder": "Twoja wiadomość...",
+    "send": "[ WYŚLIJ ]",
+    "sending": "[ WYSYŁANIE... ]",
+    "success": "// WYSŁANO — Odezwę się wkrótce.",
+    "error": "// BŁĄD — Spróbuj ponownie."
+  }
+}

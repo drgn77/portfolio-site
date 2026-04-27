@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "stack": "Stack",
+    "sites": "Sites",
+    "contact": "Contact"
+  },
+  "hero": {
+    "hint": "// PORTFOLIO_v1.0 — SYSTEM ONLINE",
+    "cta_projects": "[ PROJECTS ]",
+    "cta_contact": "[ CONTACT ]"
+  },
+  "about": {
+    "label": "// ABOUT_ME —",
+    "title": "WHO AM I?",
+    "stats_label": "// QUICK_STATS —",
+    "p1": "My name is Kacper, I'm 25 years old and I'm consistently growing as an AI and fullstack developer. I focus on building practical projects that I publish on GitHub, gaining real experience working with applications, data and AI-based systems.",
+    "p2": "I'm interested in building modern solutions using language models, RAG and various API integrations. I also develop my knowledge through online courses, gain frontend experience by building websites and believe in continuous growth through action. In the future I want to specialize in AI and build my career as an AI Engineer.",
+    "github": "[ GITHUB ]",
+    "linkedin": "[ LINKEDIN ]",
+    "email": "[ EMAIL ]"
+  },
+  "projects": {
+    "label": "// GITHUB_PROJECTS —",
+    "title": "MY WORK",
+    "view": "[ VIEW → ]",
+    "no_desc": "// no description"
+  },
+  "stack": {
+    "label": "// TECH_STACK —",
+    "title": "TOOLS I USE",
+    "learning_note": "(learning)"
+  },
+  "sites": {
+    "label": "// FRONTEND_SITES —",
+    "title": "WEBSITES I BUILT",
+    "live": "[ LIVE → ]",
+    "in_progress_desc": "Project currently in development.",
+    "wabi_desc": "Restaurant website for a local RestoBar in Kętrzyn combining Asian and Italian cuisine. Features a full menu, Google Maps integration, contact form and a separate section for a second location — all in one responsive page.",
+    "barber_desc": "Website for a local barbershop with an online booking system for clients and a management panel for the owner. Project in progress."
+  },
+  "certificates": {
+    "label": "// CERTIFICATES —",
+    "title": "MY COURSES & CERTIFICATES",
+    "issued": "Issued",
+    "category_ai": "AI",
+    "category_data": "Data",
+    "category_python": "Python"
+  },
+  "contact": {
+    "label": "// CONTACT —",
+    "title": "GET IN TOUCH",
+    "placeholder": "Looking for a job or happy to work on a project together. Feel free to reach out!",
+    "name": "NAME",
+    "email": "EMAIL",
+    "message": "MESSAGE",
+    "name_placeholder": "Your name",
+    "email_placeholder": "your@email.com",
+    "message_placeholder": "Your message...",
+    "send": "[ SEND MESSAGE ]",
+    "sending": "[ SENDING... ]",
+    "success": "// MESSAGE SENT — I'll get back to you soon.",
+    "error": "// ERROR — Please try again."
+  }
+}

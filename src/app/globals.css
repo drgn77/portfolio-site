@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0a0800;
+  --bg2: #110f00;
+  --bg3: #1a1600;
+  --amber: #ffb000;
+  --amber2: #ffa000;
+  --amber3: #ff8c00;
+  --amber-dim: #b37a00;
+  --amber-faint: #4d3400;
+  --border: #3d2e00;
+  --border2: #5c4500;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-bg3: var(--bg3);
+  --color-amber: var(--amber);
+  --color-amber2: var(--amber2);
+  --color-amber3: var(--amber3);
+  --color-amber-dim: var(--amber-dim);
+  --color-amber-faint: var(--amber-faint);
+  --color-border: var(--border);
+  --color-border2: var(--border2);
+  --font-vt323: var(--font-vt323);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Offset for fixed navbar so anchors don't hide under it */
+  scroll-padding-top: 70px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--amber);
+  font-family: var(--font-mono), 'Courier New', 'DejaVu Sans Mono', monospace;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-vt323), 'Courier New', monospace;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Green online dot for chatbot widget — separate from amber blink */
+.blink-green {
+  animation: blink 1s step-end infinite;
+  color: #00ff41;
+}
+
+.chatbot-input::placeholder {
+  color: var(--amber-dim);
+}
+
+/* Shared style for contact form inputs and textarea */
+.contact-field::placeholder {
+  color: var(--amber-dim);
+}
+
+.contact-field:focus {
+  border-color: var(--amber2);
+}
+
+.tech-badge {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--amber2);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tech-badge:hover {
+  border-color: var(--border2);
+  color: var(--amber);
+}
+
+.project-card:hover,
+.site-card:hover {
+  border-color: var(--border2) !important;
+}
+
+.nav-link {
+  color: var(--amber-dim);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--amber);
 }

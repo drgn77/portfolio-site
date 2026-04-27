@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# turbo
+.turbo/
+
+# windows
+Thumbs.db
+
+# claude / ai tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+
+# python backend
+chatbot-api/venv/
+chatbot-api/__pycache__/
+chatbot-api/*.pyc

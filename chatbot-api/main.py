@@ -14,10 +14,17 @@ with open("system_prompt.txt", "r", encoding="utf-8") as f:
 
 
 def strip_markdown(text: str) -> str:
+    # Remove headers
     text = re.sub(r'#{1,6}\s+', '', text)
-    text = re.sub(r'\*{1,3}(.*?)\*{1,3}', r'\1', text)
+    # Remove bold/italic — use [^*]+ instead of .*? to catch all cases
+    text = re.sub(r'\*{1,3}([^*]+)\*{1,3}', r'\1', text)
+    # Remove bullet points
     text = re.sub(r'^\s*[-*+]\s+', '', text, flags=re.MULTILINE)
-    text = re.sub(r'[\U0001F000-\U0001FFFF\U00002600-\U000027BF]', '', text)
+    # Remove all emoji unicode ranges
+    text = re.sub(r'[\U0001F000-\U0001FFFF]', '', text)
+    text = re.sub(r'[\u2600-\u27BF]', '', text)
+    text = re.sub(r'[\u2B00-\u2BFF]', '', text)
+    # Remove extra blank lines
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
 
@@ -25,9 +32,10 @@ def strip_markdown(text: str) -> str:
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_methods=["POST"],
+    allow_origins=["*"],
+    allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=False,
 )
 client = Anthropic()
 

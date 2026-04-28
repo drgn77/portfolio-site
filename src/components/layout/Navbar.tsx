@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-// Use locale-aware Link from our navigation helper for logo and locale switcher
 import { Link } from "@/navigation";
 
 const SECTION_IDS = ["about", "projects", "stack", "sites", "contact"] as const;
@@ -12,8 +11,8 @@ export default function Navbar() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const [activeSection, setActiveSection] = useState<SectionId | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Track which section is currently in the viewport
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
@@ -25,7 +24,6 @@ export default function Navbar() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        // Fire when section top crosses 30% down from the viewport top
         { rootMargin: "-20% 0px -70% 0px" }
       );
 
@@ -43,6 +41,14 @@ export default function Navbar() {
     { key: "sites", href: "#sites" },
     { key: "contact", href: "#contact" },
   ];
+
+  const linkStyle = (active: boolean) => ({
+    fontFamily: "var(--font-mono), monospace",
+    fontSize: "0.75rem",
+    textDecoration: "none",
+    color: active ? "var(--amber)" : "var(--amber-dim)",
+    transition: "color 0.2s",
+  });
 
   return (
     <nav
@@ -70,45 +76,93 @@ export default function Navbar() {
         [drgn.dev]
       </Link>
 
-      <ul className="flex items-center gap-6 list-none m-0 p-0">
+      {/* Desktop nav — hidden below md */}
+      <ul className="hidden md:flex items-center gap-6 list-none m-0 p-0">
         {navLinks.map((link) => (
           <li key={link.key}>
-            {/* Plain anchor for same-page smooth scroll — no Next.js router push needed */}
-            <a
-              href={link.href}
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.75rem",
-                textDecoration: "none",
-                color: activeSection === link.key ? "var(--amber)" : "var(--amber-dim)",
-                transition: "color 0.2s",
-              }}
-            >
+            <a href={link.href} style={linkStyle(activeSection === link.key)}>
               {t(link.key)}
             </a>
           </li>
         ))}
 
-        {/* Locale switcher — active locale gets amber, inactive gets amber-dim */}
         <li className="flex items-center gap-2" style={{ marginLeft: "0.5rem" }}>
           {(["pl", "en"] as const).map((loc) => (
             <Link
               key={loc}
               href="/"
               locale={loc}
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.75rem",
-                color: locale === loc ? "var(--amber)" : "var(--amber-dim)",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
+              style={linkStyle(locale === loc)}
             >
               [ {loc.toUpperCase()} ]
             </Link>
           ))}
         </li>
       </ul>
+
+      {/* Hamburger button — visible below md only */}
+      <button
+        className="md:hidden"
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        style={{
+          fontFamily: "var(--font-mono), monospace",
+          fontSize: "1rem",
+          color: "var(--amber)",
+          background: "transparent",
+          border: "1px solid var(--border2)",
+          borderRadius: "2px",
+          padding: "0.25rem 0.6rem",
+          cursor: "pointer",
+          letterSpacing: "1px",
+        }}
+        aria-label="Toggle menu"
+      >
+        [ ≡ ]
+      </button>
+
+      {/* Mobile dropdown */}
+      {isMenuOpen && (
+        <div
+          style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
+            background: "var(--bg2)",
+            borderBottom: "1px solid var(--border)",
+            padding: "1rem 2rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.key}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              style={linkStyle(activeSection === link.key)}
+            >
+              {t(link.key)}
+            </a>
+          ))}
+
+          {/* Locale switcher in mobile menu */}
+          <div style={{ display: "flex", gap: "0.75rem", marginTop: "0.25rem" }}>
+            {(["pl", "en"] as const).map((loc) => (
+              <Link
+                key={loc}
+                href="/"
+                locale={loc}
+                onClick={() => setIsMenuOpen(false)}
+                style={linkStyle(locale === loc)}
+              >
+                [ {loc.toUpperCase()} ]
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

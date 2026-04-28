@@ -25,6 +25,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "drgn.dev | AI Engineer Portfolio",
   description: "Portfolio Kacpra — AI Engineer i fullstack developer z Kętrzyna. Projekty Python, RAG, systemy multi-agentowe.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 // Tell Next.js which locale segments to pre-render at build time

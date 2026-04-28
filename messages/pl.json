@@ -48,6 +48,12 @@
     "category_data": "Data",
     "category_python": "Python"
   },
+  "cookies": {
+    "label": "// COOKIES —",
+    "text": "Ta strona używa plików cookies w celu analizy ruchu (Google Analytics). Kontynuując korzystanie ze strony, wyrażasz zgodę na ich użycie.",
+    "accept": "[ AKCEPTUJĘ ]",
+    "decline": "[ ODRZUĆ ]"
+  },
   "contact": {
     "label": "// KONTAKT —",
     "title": "NAPISZ DO MNIE",

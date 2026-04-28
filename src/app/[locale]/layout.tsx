@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import { Chatbot } from "@/components/sections/Chatbot";
+import { CookieBanner } from "@/components/ui/CookieBanner";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "../globals.css";
 
 const vt323 = VT323({
@@ -61,6 +63,8 @@ export default async function LocaleLayout({
           <Navbar />
           {children}
           <Chatbot />
+          <CookieBanner />
+          <GoogleAnalytics gaId="G-VNP8VJ7XE0" />
         </NextIntlClientProvider>
       </body>
     </html>

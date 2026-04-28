@@ -48,6 +48,12 @@
     "category_data": "Data",
     "category_python": "Python"
   },
+  "cookies": {
+    "label": "// COOKIES —",
+    "text": "This site uses cookies to analyze traffic (Google Analytics). By continuing to use the site, you agree to their use.",
+    "accept": "[ ACCEPT ]",
+    "decline": "[ DECLINE ]"
+  },
   "contact": {
     "label": "// CONTACT —",
     "title": "GET IN TOUCH",
